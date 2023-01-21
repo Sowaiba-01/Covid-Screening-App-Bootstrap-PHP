@@ -1,0 +1,39 @@
+.w25
+{
+  width: 60px
+}
+.ww-25
+{
+  width: 77px;
+}
+.www-25
+{
+  width: 95px;
+}
+.modal, .modal-dialog
+{
+        --bs-modal-padding: 0rem;
+    --bs-modal-margin: 0rem;
+}
+img#logo
+{
+  top: 38px;
+}
+#image_fever
+{
+    height: 335px;
+    margin-top: 45px;
+    margin-bottom: 14rem;
+}
+.margin_bottom
+{
+    margin-bottom: 12.5rem!important;
+}
+.margin_bottom2
+{
+    margin-bottom: 440px;
+}
+.display
+{
+display:contents;
+}

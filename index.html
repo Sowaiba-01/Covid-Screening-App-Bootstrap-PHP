@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>replit</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+</head>
+
+<body class="m-2">
+    <div class="container-fluid cont_1 bg-light">
+        <img src="logo.png" id="logo" class="mt-3 mb-3 ww-25">
+        <p class="h1 fw-bold">Covid-19 <br>Screening Tool</p>
+        <div class="d-flex">
+            <div>
+                <p class="fs-6">Use this self assessment tool to determine whether you need to be tested for <span
+                        class="text-uppercase">covid-19</span>.</p>
+                <p class="fs-6">You can complete this assessment yourself or on behalf of someone else, if they are not
+                    able.
+                </p>
+            </div>
+            <img src="covid19screen.png" class="www-25">
+        </div>
+        <div class="d-grid"> <button type="button" class="btn btn-primary mb-5" data-bs-toggle="modal"
+                data-bs-target="#staticBackdrop">Start Screening</button></div>
+    </div>
+    <p class="h1 fw-bold mt-3 fs-3 ms-3">More Information</p>
+    <div class="d-flex align-items-center justify-content-center
+    ms-3 container_1 border-bottom border-2 border-light">
+        <img src="virus.png" class="w25 image">
+        <div class="ms-3 mt-3">
+            <p class=" h3 fs-6 fw-bolder mb-0">What is Covid-19?</p>
+            <p class="fs-6 ">Coronavirus disease (COVID-19) is an infectious disease...</p>
+        </div>
+        <img src="icon-arrow.png" class="arrow-icon" data-bs-toggle="modal" data-bs-target="#what_is">
+    </div>
+    <div class="d-flex align-items-center ms-3 justify-content-center container_2 border-bottom border-2 border-light">
+        <img src="symptoms.png" class="w25">
+        <div class="ms-3 mt-3">
+            <p class=" h3 fs-6 fw-bolder mb-0">What are its sympotms?</p>
+            <p class="fs-6 text-break">The COVID-19 disease effects different people in different ways...</p>
+        </div>
+        <img src="icon-arrow.png" class="arrow-icon" data-bs-toggle="modal" data-bs-target="#sympotms">
+    </div>
+
+    <div class="d-flex align-items-center ms-3 justify-content-center container_3">
+        <img src="prevent.png" class="w25">
+        <div class="ms-3 mt-3">
+            <p class=" h3 fs-6 fw-bolder mb-0">How can you prevent it?</p>
+            <p class="fs-6 ">There is currently no vaccine to prevent corona virus...</p>
+        </div>
+        <img src="icon-arrow.png" class="arrow-icon" data-bs-toggle="modal" data-bs-target="#prevention">
+    </div>
+    </div>
+
+
+    <!-- Modal1 -->
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <div class="modal-body">
+                    <div class="container-fluid Page-2 bg-light ps-0 pe-0">
+                        <img src="logo.png" id="logo" class="ww-25 position-absolute d-inline ms-2">
+                        <button type="button" class="btn-close mt-5" style="margin-left:91%" aria-label="Close"
+                            data-bs-dismiss="modal"></button>
+
+                        <div class="inner_div bg-white margin_bottom">
+                            <p class="h1 fw-bold mt-3 fs-3 ms-3 pt-5">1. Do you have fever above 101.4?</p>
+                            <img src="fever.png" class="mx-auto d-block mt-5 mb-5 " id="image_fever">
+                            <div class="container">
+                                <div class="row"><button type="button" class="btn btn-primary mb-1 w-75 ms-5"
+                                        data-bs-toggle="modal" data-bs-target="#modal2" onclick="isolate(1,true)">Yes, I
+                                        do</button>
+                                </div>
+                                <div class="row">
+                                    <button type="button" class="btn btn-primary mb-3  w-75 ms-5" data-bs-toggle="modal"
+                                        data-bs-target="#modal2" onclick="isolate(1,false)">No, I don't</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal2 -->
+    <div class="modal fade" id="modal2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <div class="modal-body">
+                    <div class="container-fluid Page-2 bg-light ps-0 pe-0">
+                        <img src="logo.png" id="logo" class="ww-25 position-absolute d-inline ms-2">
+                        <button type="button" class="btn-close mt-5" style="margin-left:91%" aria-label="Close"
+                            data-bs-dismiss="modal"></button>
+
+                        <div class="inner_div bg-white margin_bottom">
+                            <p class="h1 fw-bold mt-3 fs-3 ms-3 pt-5">2. Do you have Cough - (Dry Cough)?</p>
+                            <img src="iconfinder_SNEEZING-pacient-health_care-healthcare-medical_5997208.png"
+                                class="mx-auto d-block mt-5 mb-5 " id="image_fever">
+                            <div class="container">
+                                <div class="row"><button type="button" class="btn btn-primary mb-1  w-75 ms-5"
+                                        data-bs-toggle="modal" data-bs-target="#modal3" onclick="isolate(2,true)">Yes, I
+                                        do</button>
+                                </div>
+                                <div class="row">
+                                    <button type="button" class="btn btn-primary mb-3  w-75 ms-5" data-bs-toggle="modal"
+                                        data-bs-target="#modal3" onclick="isolate(2,false)">No, I don't</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Modal3 -->
+    <div class="modal fade" id="modal3" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <div class="modal-body">
+                    <div class="container-fluid Page-2 bg-light ps-0 pe-0">
+                        <img src="logo.png" id="logo" class="ww-25 position-absolute d-inline ms-2">
+                        <button type="button" class="btn-close mt-5" style="margin-left:91%" aria-label="Close"
+                            data-bs-dismiss="modal"></button>
+
+                        <div class="inner_div bg-white margin_bottom">
+                            <p class="h1 fw-bold mt-3 fs-3 ms-3 pt-5">3. Do you have Cough - (Wet Cough)??</p>
+                            <img src="cough.png" class="mx-auto d-block mt-5 mb-5 " id="image_fever">
+                            <div class="container">
+                                <div class="row"><button type="button" class="btn btn-primary mb-1  w-75 ms-5"
+                                        data-bs-toggle="modal" data-bs-target="#modal4" onclick="isolate(3,true)">Yes, I
+                                        do</button>
+                                </div>
+                                <div class="row">
+                                    <button type="button" class="btn btn-primary mb-3  w-75 ms-5" data-bs-toggle="modal"
+                                        data-bs-target="#modal4" onclick="isolate(3,false)">No, I don't</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal4-->
+    <div class="modal fade" id="modal4" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <div class="modal-body">
+                    <div class="container-fluid Page-2  bg-light ps-0 pe-0">
+                        <img src="logo.png" id="logo" class="ww-25 position-absolute d-inline ms-2">
+                        <button type="button" class="btn-close mt-5" style="margin-left:91%" aria-label="Close"
+                            data-bs-dismiss="modal"></button>
+
+                        <div class="inner_div bg-white margin_bottom">
+                            <p class="h1 fw-bold mt-3 fs-3 ms-3 pt-5">4. Do you have Shortness of Breath?</p>
+                            <img src="iconfinder_breath_5932497.png" class="mx-auto d-block mt-5 mb-5 "
+                                id="image_fever">
+                            <div class="container">
+                                <div class="row"><button type="button" class="btn btn-primary mb-1  w-75 ms-5"
+                                        data-bs-toggle="modal" onclick="isolate(4,true)" data-bs-target="#modal5">Yes, I
+                                        do</button>
+                                </div>
+                                <div class="row">
+                                    <button type="button" class=" btn btn-primary mb-3  w-75 ms-5"
+                                        data-bs-toggle="modal" onclick="isolate(4,false)" data-bs-target="#modal5">No, I
+                                        don't</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal5 -->
+    <div class="modal fade" id="modal5" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <div class="modal-body">
+                    <div class="container-fluid Page-2 bg-light ps-0 pe-0">
+                        <img src="logo.png" id="logo" class="ww-25 position-absolute d-inline ms-2">
+                        <button type="button" class="btn-close mt-5" style="margin-left:91%" aria-label="Close"
+                            data-bs-dismiss="modal"></button>
+
+                        <div class="inner_div bg-white margin_bottom">
+                            <p class="h1 fw-bold mt-3 fs-3 ms-3 pt-5">5. Do you have Flu?</p>
+                            <img src="flu.png" class="mx-auto d-block mt-5 mb-5 " id="image_fever">
+                            <div class="container">
+                                <div class="row"><button type="button" class="btn btn-primary mb-1 w-75 ms-5"
+                                        data-bs-toggle="modal" onclick="isolate(5,true)" data-bs-target="#modal6">Yes, I
+                                        do</button>
+                                </div>
+                                <div class="row">
+                                    <button type="button" class="btn btn-primary mb-3  w-75 ms-5" data-bs-toggle="modal"
+                                        onclick="isolate(5,false)" data-bs-target="#modal6">No, I don't</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal6 -->
+    <div class="modal fade" id="modal6" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <div class="modal-body">
+                    <div class="container-fluid Page-2 bg-light ps-0 pe-0">
+                        <img src="logo.png" id="logo" class="ww-25 position-absolute d-inline ms-2">
+                        <button type="button" class="btn-close mt-5" style="margin-left:91%" aria-label="Close"
+                            data-bs-dismiss="modal"></button>
+
+                        <div class="inner_div bg-white margin_bottom">
+                            <p class="h1 fw-bold mt-3 fs-3 ms-3 pt-5">6. Have you travelled abroad in the last 15 days?
+                            </p>
+                            <img src="home.png" class="mx-auto d-block mt-5 mb-5 " id="image_fever">
+                            <div class="container">
+                                <div class="row"><button type="button" class="btn btn-primary mb-1  w-75 ms-5"
+                                        data-bs-toggle="modal" onclick="isolate(6,true)" data-bs-target="#modal7">Yes, I
+                                        do</button>
+                                </div>
+                                <div class="row">
+                                    <button type="button" class="btn btn-primary mb-3  w-75 ms-5" data-bs-toggle="modal"
+                                        onclick="isolate(6,false)" data-bs-target="#modal7">No, I don't</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Modal7-->
+    <div class="modal fade" id="modal7" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <div class="modal-body">
+                    <div class="container-fluid Page-2 bg-light ps-0 pe-0">
+                        <img src="logo.png" id="logo" class="ww-25 position-absolute d-inline ms-2">
+                        <button type="button" class="btn-close mt-5" style="margin-left:91%" aria-label="Close"
+                            data-bs-dismiss="modal"></button>
+
+                        <div class="inner_div bg-white margin_bottom">
+                            <p class="h1 fw-bold mt-3 fs-3 ms-3 pt-5">7. Have you been in contact with any person who
+                                has recently travelled internationally?</p>
+                            <img src="tourist.png" class="mx-auto d-block mt-5 mb-5 " id="image_fever">
+                            <div class="container">
+                                <div class="row"><button type="button" class="btn btn-primary mb-1  w-75 ms-5"
+                                        data-bs-toggle="modal" data-bs-target="#modal8" onclick="isolate(7,true)">Yes, I
+                                        do</button>
+                                </div>
+                                <div class="row">
+                                    <button type="button" class="btn btn-primary mb-3  w-75 ms-5" data-bs-toggle="modal"
+                                        data-bs-target="#modal8" onclick="isolate(7,false)">No, I don't</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal8-->
+    <div class="modal fade" id="modal8" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <div class="modal-body">
+                    <div class="container-fluid Page-2  bg-light ps-0 pe-0">
+                        <img src="logo.png" id="logo" class="ww-25 position-absolute d-inline ms-2">
+                        <button type="button" class="btn-close mt-5" style="margin-left:91%" aria-label="Close"
+                            data-bs-dismiss="modal"></button>
+
+                        <div class="inner_div bg-white margin_bottom">
+                            <p class="h1 fw-bold mt-3 fs-3 ms-3 pt-5">8. Do you have chest infection?</p>
+                            <img src="chest.png" class="mx-auto d-block mt-5 mb-5 " id="image_fever">
+                            <div class="container">
+                                <div class="row"><button type="button" class="btn btn-primary mb-1  w-75 ms-5"
+                                        onclick="isolate(8,true)" data-bs-toggle="modal" data-bs-target="#modal9">Yes, I
+                                        do</button>
+                                </div>
+                                <div class="row">
+                                    <button type="button" class="btn btn-primary mb-3  w-75 ms-5"
+                                        onclick="isolate(8,false)" data-bs-toggle="modal" data-bs-target="#modal9">No, I
+                                        don't</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal9-->
+    <div class="modal fade" id="modal9" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <div class="modal-body">
+                    <div class="container-fluid Page-2 bg-light ps-0 pe-0">
+                        <img src="logo.png" id="logo" class="ww-25 position-absolute d-inline ms-2">
+                        <button type="button" class="btn-close mt-5" style="margin-left:91%" aria-label="Close"
+                            data-bs-dismiss="modal"></button>
+
+                        <div class="inner_div bg-white margin_bottom">
+                            <p class="h1 fw-bold mt-3 fs-3 ms-3 pt-5">9. Is your age more than or equal to 60 years of
+                                age?</p>
+                            <img src="age.png" class="mx-auto d-block mt-5 mb-5 " id="image_fever">
+                            <div class="container">
+                                <div class="row"><button type="button" class="btn btn-primary mb-1  w-75 ms-5"
+                                        data-bs-toggle="modal" data-bs-target="#modal10" onclick="isolate(9,true)">Yes,
+                                        I
+                                        do</button>
+                                </div>
+                                <div class="row">
+                                    <button type="button" class="btn btn-primary mb-3  w-75 ms-5" data-bs-toggle="modal"
+                                        data-bs-target="#modal10" onclick="isolate(9,false)">No, I don't</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal10-->
+    <div class="modal fade" id="modal10" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <div class="modal-body">
+                    <div class="container-fluid Page-2  bg-light ps-0 pe-0">
+                        <img src="logo.png" id="logo" class="ww-25 position-absolute d-inline ms-2">
+                        <button type="button" class="btn-close mt-5" style="margin-left:91%" aria-label="Close"
+                            data-bs-dismiss="modal"></button>
+
+                        <div class="inner_div bg-white margin_bottom">
+                            <p class="h1 fw-bold mt-3 fs-3 ms-3 pt-5">10. Due to Co-morbidities, do you take any
+                                medicine?</p>
+                            <img src="medicine.png" class="mx-auto d-block mt-5 mb-5 " id="image_fever">
+                            <div class="container">
+                                <div class="row"><button type="button" class="btn btn-primary mb-1  w-75 ms-5"
+                                        onclick="isolate(10,true), result()">Yes, I
+                                        do</button>
+                                </div>
+                                <div class="row">
+                                    <button type="button" class="btn btn-primary mb-3  w-75 ms-5"
+                                        onclick="isolate(10,false), result()">No, I don't</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--index page buttons like-->
+    <div class="modal fade" id="what_is" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <div class="modal-body">
+                    <div class="container-fluid Page-2  bg-light ps-0 pe-0">
+                        <img src="logo.png" id="logo" class="ww-25 position-absolute d-inline ms-2">
+                        <button type="button" class="btn-close mt-5" style="margin-left:91%" aria-label="Close"
+                            data-bs-dismiss="modal"></button>
+
+                        <div class="inner_div bg-white margin_bottom">
+                            <p class="h1 fw-bold mt-3 fs-3 ms-3 pt-5">COVID-19</p>
+                            <p class="text-break ms-3 fs-6">Coronaviruses are a group of related RNA viruses that cause
+                                diseases in mammals
+                                and birds. In humans and birds, they cause respiratory tract infections that can range
+                                from mild to lethal. Mild
+                                illnesses in humans include some cases of the common cold (which is also caused by other
+                                viruses, predominantly
+                                rhinoviruses), while more lethal varieties can cause SARS, MERS and COVID-19, which is
+                                causing the ongoing
+                                pandemic. In cows and pigs they cause diarrhea, while in mice they cause hepatitis and
+                                encephalomyelitis.</p>
+                            <p class="h1 fw-bold mt-3 fs-3 ms-3 pt-5">How it spreads?</p>
+                            <p class="text-break ms-3 fs-6">Research shows that the virus can live in the air for up to
+                                3 hours. It can get
+                                into your lungs if someone who has it breathes out and you breathe that air in. Experts
+                                are divided on how often
+                                the virus spreads through the airborne route and how much it contributes to the
+                                pandemic.</p>
+                            <p class="ms-3 fs-6">Learn more on who.int <a
+                                    href="https://covid.gov.pk/covid19#:~:text=Other%20human%20coronavirus%20strains%20are,or%20sneezing)%20or%20contaminated%20hands."
+                                    class="link-secondary" target="_blank"><i class="fa fa-arrow-right"></i></a> </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+    <!-- Modal3 -->
+    <div class="modal fade" id="sympotms" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <div class="modal-body">
+                    <div class="container-fluid Page-4 bg-light ps-0 pe-0">
+                        <img src="logo.png" id="logo" class="ww-25 position-absolute d-inline ms-2">
+                        <button type="button" class="btn-close mt-5" style="margin-left:91%" aria-label="Close"
+                            data-bs-dismiss="modal"></button>
+                        <div class="inner_div bg-white">
+                            <p class="h1 fw-bold mt-3 fs-3 ms-3 pt-5">Symptoms!!</p>
+                            <p class="ms-3">COVID-19 affects different people in different ways. Most infected people
+                                will develop mild to moderate illness and recover without hospitalization.</p>
+                            <p class="h3 fw-bold mt-1 fs-3 ms-3 pt-5">Most common symptoms:</p>
+                            <ol class="list-group-numbered">
+                                <li class="list-group-item">Fever</li>
+                                <li class="list-group-item">Cough</li>
+                                <li class="list-group-item">Tiredness</li>
+                                <li class="list-group-item">Loss of taste or smell</li>
+                            </ol>
+                            <p class="h3 fw-bold mt-1 fs-3 ms-3 pt-5">Less common symptoms:</p>
+                            <ol class="list-group-numbered">
+                                <li class="list-group-item">Sore Throat</li>
+                                <li class="list-group-item">Headache</li>
+                                <li class="list-group-item">Aches and Pain</li>
+                                <li class="list-group-item">Diarrhea</li>
+                                <li class="list-group-item">Red or irritated eyes</li>
+
+                            </ol>
+                            <p class="h3 fw-bold mt-1 fs-3 ms-3 pt-5">Serious symptoms:</p>
+                            <ol class="list-group-numbered">
+                                <li class="list-group-item">Difficult breathing or Shortness of breadth</li>
+                                <li class="list-group-item">Loss of speech, mobility or confusion</li>
+                                <li class="list-group-item">Chest Pain</li>
+                            </ol>
+                            <p class="fs-6 ms-3  pb-5 ">Seek immediate medical attention if you have serious symptoms.
+                                Always call before visiting your doctor or health facility.
+                                People with mild symptoms who are otherwise healthy should manage their symptoms at
+                                home.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal4-->
+    <div class="modal fade display" id="prevention" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <div class="modal-body">
+                    <div class="container-fluid Page-4  bg-light  ps-0 pe-0 margin_bottom2">
+                        <img src="logo.png" id="logo" class="ww-25 position-absolute d-inline ms-2">
+                        <button type="button" class="btn-close mt-5" style="margin-left:91%" aria-label="Close"
+                            data-bs-dismiss="modal"></button>
+                        <div class="inner_div bg-white">
+                            <p class="h1 fw-bold mt-3 fs-3 ms-3 pt-5">Prevention of COVID-19</p>
+                            <ol class="list-group-numbered">
+                                <li class="list-group-item">Wash your hands often.</li>
+                                <li class="list-group-item">Avoid close contact.</li>
+                                <li class="list-group-item">Cover your mouth and nose with a cloth face cover when
+                                    around others</li>
+                                <li class="list-group-item">Cover coughs and sneezes.</li>
+                                <li class="list-group-item">Clean and disinfect.</li>
+                                <li class="list-group-item">If you have a fever, cough and difficulty breathing, seek
+                                    medical care early — but
+                                    call first</li>
+                            </ol>
+                            <p class="fs-6 ms-3  pb-5 ">STAY HOME, STAY SAFE!!!!</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Answers page-->
+    <div class="modal fade" id="danger" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <div class="modal-body">
+                    <div class="container-fluid Page-4  bg-light  ps-0 pe-0 margin_bottom2">
+                        <img src="logo.png" id="logo" class="ww-25 position-absolute d-inline ms-2">
+                        <button type="button" class="btn-close mt-5" style="margin-left:91%" aria-label="Close"
+                            data-bs-dismiss="modal"></button>
+                        <div class="inner_div bg-white">
+                            <p class="h1 fw-bold mt-3 fs-3 ms-3 pt-5">High Probability of Corona!</p>
+                            <ol class="list-group-numbered">
+                                <li class="list-group-item">Isolate From Others</li>
+                                <li class="list-group-item">Rest and Take Care</li>
+                                <li class="list-group-item">Call Work Health Providers</li>
+                                <li class="list-group-item">Monitor Symptoms.</li>
+                                <li class="list-group-item">Talk to Someone About Testing</li>
+                                <li class="list-group-item">Follow Govt Instructions</li>
+                            </ol>
+                            <p class="fs-6 ms-3  pb-5 ">As of now, your answers suggest that you may need testing. If
+                                anything changes, take the questionnaire again.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="ver_good" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <div class="modal-body">
+                    <div class="container-fluid Page-4  bg-light  ps-0 pe-0 margin_bottom2">
+                        <img src="logo.png" id="logo" class="ww-25 position-absolute d-inline ms-2">
+                        <button type="button" class="btn-close mt-5" style="margin-left:91%" aria-label="Close"
+                            data-bs-dismiss="modal"></button>
+                        <div class="inner_div bg-white">
+                            <p class="h1 fw-bold mt-3 fs-3 ms-3 pt-5">Suspected for Corona!</p>
+                            <ol class="list-group-numbered">
+                                <li class="list-group-item">Isolate From Others</li>
+                                <li class="list-group-item">Rest and Take Care</li>
+                                <li class="list-group-item">Call Work Health Providers</li>
+                                <li class="list-group-item">Monitor Symptoms.</li>
+                                <li class="list-group-item">Talk to Someone About Testing</li>
+                                <li class="list-group-item">Follow Govt Instructions</li>
+                            </ol>
+                            <p class="fs-6 ms-3  pb-5 ">As of now, your answers suggest that you may need testing. If
+                                anything changes, take the questionnaire again.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="good" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <div class="modal-body">
+                    <div class="container-fluid Page-4  bg-light  ps-0 pe-0 margin_bottom2">
+                        <img src="logo.png" id="logo" class="ww-25 position-absolute d-inline ms-2">
+                        <button type="button" class="btn-close mt-5" style="margin-left:91%" aria-label="Close"
+                            data-bs-dismiss="modal"></button>
+                        <div class="inner_div bg-white">
+                            <p class="h1 fw-bold mt-3 fs-3 ms-3 pt-5">You are all Good!</p>
+                            <ol class="list-group-numbered">
+                                <li class="list-group-item">No Test Needed At This Time</li>
+                                <li class="list-group-item">Maintain Social Distance</li>
+                                <li class="list-group-item">Avoid groups of people and keep six feet apart from anyone
+                                    who’s not part of the household. Especially avoid those showing symptoms.</li>
+                            </ol>
+                            <p class="fs-6 ms-3  pb-5 ">As of now, their answers suggest they do not need to get tested.
+                                If anything changes, take the questionnaire again.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
+        integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js"
+        integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK"
+        crossorigin="anonymous"></script>
+    <script>
+        var arr = [];
+        var qno1 = []
+        function isolate(qno, value) {
+            arr.push(value);
+            qno1.push(qno)
+
+        }
+        function result() {
+            console.log(arr);
+            console.log(qno1);
+
+            for (var a = 0, b = 1; a < arr.length, b < qno1.length; a++, b++) {
+
+//qno1,qno2,qno5,qno3, qno10,qno7
+                if ((qno1[a] == 1 && arr[a] == true) && (qno1[b] == 2 && arr[b] == true) && (qno1[b + 3] == 5 && arr[b + 3] == true)&& (qno1[b + 1] == 3 && (arr[b + 1] == true || arr[b + 1] == false))&& (qno1[b + 8] == 10 && (arr[b + 8] == true || arr[b + 8] == false))  ) {
+                    $('#danger').modal('show');
+                    break;
+
+                }
+//qno1,qno2,qno4,qno3--,qno6--
+                else if ((qno1[a] == 1 && arr[a] == true) && (qno1[b] == 2 && arr[b] == true) && (qno1[b + 2] == 4 && arr[b + 2] == true)&&(qno1[b + 4] == 6 && (arr[b + 4] == true || arr[b + 4] == false)) ) {
+                    $('#ver_good').modal('show');
+                    break;
+                }
+                else {
+                    
+
+                    $('#good').modal('show');
+                }
+            }
+        };
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
